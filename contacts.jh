@@ -1,0 +1,35 @@
+
+entity Phone {
+	name String maxlength(32),
+    number String  maxlength(16)
+}
+
+entity Address {
+	name String maxlength(32),
+    textAddress String maxlength(255)
+}
+
+entity Job {
+	profession String maxlength(32),
+    companyName String maxlength(32),
+    departmentName String maxlength(32),
+    jobName String maxlength(32)
+}
+
+entity Contact {
+	name String maxlength(32),
+    lastName String maxlength(32),
+    birthDate Instant,
+    gender String maxlength(32),
+    nickname String maxlength(32),
+    email String  maxlength(128) unique required
+}
+
+relationship ManyToOne {
+	Phone{contact} to Contact{phones},
+    Address{contact} to Contact{addresses},
+    Job{contact} to Contact{jobs}
+}
+
+dto     * with mapstruct
+service * with serviceClass
