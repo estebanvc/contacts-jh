@@ -1,0 +1,42 @@
+{
+    "name": "Address",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "32"
+        },
+        {
+            "fieldName": "textAddress",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "255"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "contact",
+            "otherEntityRelationshipName": "addresses",
+            "relationshipName": "contact",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200329223200",
+    "entityTableName": "address",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "contacts",
+    "applications": "*",
+    "microserviceName": "contacts"
+}

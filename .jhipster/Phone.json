@@ -1,0 +1,42 @@
+{
+    "name": "Phone",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "32"
+        },
+        {
+            "fieldName": "number",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "16"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "contact",
+            "otherEntityRelationshipName": "phones",
+            "relationshipName": "contact",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200329223100",
+    "entityTableName": "phone",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "embedded": false,
+    "clientRootFolder": "contacts",
+    "applications": "*",
+    "microserviceName": "contacts"
+}

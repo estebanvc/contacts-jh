@@ -25,10 +25,10 @@ entity Contact {
     email String  maxlength(128) unique required
 }
 
-relationship ManyToOne {
-	Phone{contact} to Contact{phones},
-    Address{contact} to Contact{addresses},
-    Job{contact} to Contact{jobs}
+relationship OneToMany {
+	Contact{phones} to Phone
+    Contact{addresses} to Address
+    Contact{jobs} to Job
 }
 
 dto     * with mapstruct
